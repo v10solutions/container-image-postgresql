@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+#
+# Container Image PostgreSQL
+#
+
+set -o "errexit"
+set -o "nounset"
+set -o "pipefail"
+
+pg_isready -t "${2}" -h "$(hostname -f)" -p "${1}" | tr -d "\n"

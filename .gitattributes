@@ -1,0 +1,7 @@
+#
+# Container Image PostgreSQL
+#
+
+var/lib/postgresql/ca.pem binary
+var/lib/postgresql/tls-cer.pem binary
+var/lib/postgresql/tls-key.pem binary

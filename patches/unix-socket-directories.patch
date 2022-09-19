@@ -1,0 +1,27 @@
+#
+# Container Image PostgreSQL
+#
+
+--- a/src/backend/utils/misc/postgresql.conf.sample
++++ b/src/backend/utils/misc/postgresql.conf.sample
+@@ -63,7 +63,7 @@
+ #port = 5432				# (change requires restart)
+ #max_connections = 100			# (change requires restart)
+ #superuser_reserved_connections = 3	# (change requires restart)
+-#unix_socket_directories = '/tmp'	# comma-separated list of directories
++unix_socket_directories = '/usr/local/var/run/postgresql'	# comma-separated list of directories
+ 					# (change requires restart)
+ #unix_socket_group = ''			# (change requires restart)
+ #unix_socket_permissions = 0777		# begin with 0 to use octal notation
+
+--- a/src/include/pg_config_manual.h
++++ b/src/include/pg_config_manual.h
+@@ -201,7 +201,7 @@
+  * support them yet.
+  */
+ #ifndef WIN32
+-#define DEFAULT_PGSOCKET_DIR  "/tmp"
++#define DEFAULT_PGSOCKET_DIR  "/usr/local/var/run/postgresql"
+ #else
+ #define DEFAULT_PGSOCKET_DIR ""
+ #endif
